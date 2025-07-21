@@ -14,3 +14,14 @@ export const LIST_ALL_CHARACTERS = gql`
     }
   }
 `;
+
+export const FETCH_ALL_LISTS = gql`
+  query {
+    posts {
+      data {
+        id
+        title
+      }
+    }
+  }
+`;
