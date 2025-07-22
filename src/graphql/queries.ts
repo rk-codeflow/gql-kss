@@ -21,6 +21,7 @@ export const FETCH_ALL_LISTS = gql`
       data {
         id
         title
+        body
       }
     }
   }

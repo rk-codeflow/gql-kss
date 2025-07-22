@@ -6,29 +6,19 @@ import FetchList from "./components/FetchList";
 
 function App() {
   const [characters, setCharacters] = useState([]);
-  const [lists, setLists] = useState();
-  const { GET_ALL_CHARACTERS, GET_ALL_LISTS } = useGQL();
-  // const { data, loading, error } = GET_ALL_CHARACTERS();
-  const { data, loading, error } = GET_ALL_LISTS();
+  const { GET_ALL_CHARACTERS } = useGQL();
+  const { data, loading, error } = GET_ALL_CHARACTERS();
 
-  console.log({ data });
-
-  // useEffect(() => {
-  //   if (data) {
-  //     setCharacters(data.characters.results);
-  //   }
-  // });
   useEffect(() => {
     if (data) {
-      setLists(data?.posts?.data);
+      setCharacters(data.characters.results);
     }
   });
 
   return (
     <>
-      <h2>Rick and Morty</h2>
-      {/* <CharacterList list={characters} loading={loading} error={error} /> */}
-      <FetchList lists={lists} loading={loading} error={error} />
+      <CharacterList list={characters} loading={loading} error={error} />
+      <FetchList />
     </>
   );
 }

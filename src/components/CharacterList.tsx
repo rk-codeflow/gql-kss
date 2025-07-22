@@ -20,15 +20,19 @@ const CharacterList = ({ list, loading, error }: any) => {
   }
 
   return (
-    <div style={listStyle}>
-      {list.map((item: any) => (
-        <div style={listStyleCards}>
-          <img src={item.image} alt={item.name} />
-          <h4 style={{ textAlign: "center" }}>Name: {item.name}</h4>
-          <p style={{ textAlign: "center" }}>Origin: {item.origin.name}</p>
-        </div>
-      ))}
-    </div>
+    <>
+      <h2>Rick and Morty</h2>
+
+      <div style={listStyle}>
+        {list.map((item: any) => (
+          <div style={listStyleCards}>
+            <img src={item.image} alt={item.name} />
+            <h4 style={{ textAlign: "center" }}>Name: {item.name}</h4>
+            <p style={{ textAlign: "center" }}>Origin: {item.origin.name}</p>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
